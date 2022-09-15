@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* box-size = seta o tamanho da box de acordo com a width */
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-image: url(./assets/bg.jpg);
+    /*insere a imagem de fundo*/
+    background-position: top center;
+    /* ajusta a posição do fundo top = em cima e depois centralizado*/
+    background-size: 100% auto;
+    /*ajusta o tamanho do fundo 100% na orizontal e altura automatica*/
+    background-repeat: no-repeat;
+    /*repetição da imagem de fundo, no repeat= sem repetição*/
+    background-color: #121214;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    /*define a fonte do texto*/
+    line-height: 160%;
+}
+
+header {
+    padding-top: 32px;
+    height: 152px;
+    /* altura da imagem de perfil 120px + 32px do espaçamento da imagem até a caixa Meus jogos */
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+
+    transition: transform .3s;
+    /* configuração do tempo de transição aplicada na linha abaixo. */
+}
+
+header div:hover {
+    transform: scale(1.1);
+    /* Insere o efeito quando passo o mouse em cima(fica maior) */
+}
+
+header div img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+main * {
+    /* border: 1px solid red;*/
+    /*insere as bordar nas caixas */
+}
+
+main {
+    max-width: 580px;
+    /*largura da caixa com 580 pixel */
+    width: 90%;
+    /*largura da caixa ocupa 90% da pagina assim indepente do tamanho a tela sempre terá 10% de margem*/
+    margin: 32px auto;
+    /*ajusta automaticamente a margem de acordo com a definição acima*/
+    display: grid;
+    /*permiete que eu utilize o gap sem alterar a estrutura da caixa */
+    gap: 24px;
+    /*distancia estre os itens */
+}
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+
+}
+
+section h2 {
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: -0.47px;
+}
+
+section p {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0, 18px;
+    color: #A1A1AA
+}
+
+section ul {
+    display: flex;
+    /* visualização das caixas de forma horizontal(um ao lado do outro) */
+    flex-wrap: wrap;
+    /* dentro da seção ele ajusta jogando para baixo evitando que aumente a largura da cixar */
+    gap: 16px;
+    margin-top: 24px;
+}
+
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.games_list img {
+    width: 90px;
+    border-radius: 8px;
+    /*arredondamento da borda*/
+}
+
+.chanel_list img {
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54
+}
+
+/*animation */
+
+header div {
+    animation: fromTop .7s .2s backwards;
+    /* Nome da animação, tempo de duração, delay, garante que a animação comece com os parametros definidos abaixo */
+}
+
+main section {
+    animation: fromBottom .7s backwards;
+}
+
+main section:nth-child(1) {
+    /*referencia o parampreto a 1ª section declarada no html*/
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .3s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .6s;
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translatex(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
